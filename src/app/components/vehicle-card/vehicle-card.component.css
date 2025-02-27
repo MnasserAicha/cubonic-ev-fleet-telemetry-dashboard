@@ -1,0 +1,73 @@
+.low-battery {
+  border-left: 5px solid #ff0000;
+}
+.middle-battery {
+  border-left: 5px solid #ffcc02dd;
+}
+.charging-battery {
+  border-left: 5px solid #2ab012a1;
+}
+
+mat-divider {
+  margin: 8px 0;
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+mat-card-title {
+  font-weight: bold;
+}
+
+.tag {
+  display: inline-block;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 15px;
+  width: 80px;
+  text-align: center;
+  flex-shrink: 0;
+  text-overflow: ellipsis;
+  background-color: #76d9f6;
+}
+
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: var(--card-color);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  text-decoration: none;
+  color: var(--text-color);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .vehicle-info {
+    display: grid;
+    gap: 10px;
+  }
+  .icon-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    width: 100%;
+  }
+
+  mat-icon {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+}

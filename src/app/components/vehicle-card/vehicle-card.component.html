@@ -1,0 +1,53 @@
+<mat-card>
+  <div
+    class="vehicle-card"
+    [ngClass]="{
+      'low-battery': vehicle.battery < 20,
+      'middle-battery': vehicle.battery >= 20 && vehicle.battery <= 50,
+      'charging-battery': vehicle.carStatus === 'Charging',
+    }"
+    (click)="onCardClick()"
+  >
+    <div class="mat-card-header">
+      <h3>{{ vehicle.id }}</h3>
+      <span class="tag">{{ vehicle.carStatus }}</span>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="vehicle-info">
+      <p class="icon-text"><mat-icon>speed</mat-icon> Speed: {{ vehicle.speed }} km/h</p>
+      <p class="icon-text">
+        <mat-icon>battery_charging_full</mat-icon> Battery: {{ vehicle.battery }}%
+      </p>
+      <p class="icon-text">
+        <mat-icon>thermostat</mat-icon> Temperature: {{ vehicle.temperature }}°C
+      </p>
+      <p class="icon-text">
+        <mat-icon>settings_input_component</mat-icon> Tire Pressure: {{ vehicle.tirePressure }} PSI
+      </p>
+      <p class="icon-text">
+        <mat-icon>build_circle</mat-icon> Motor Efficiency: {{ vehicle.motorEfficiency }}%
+      </p>
+      <p class="icon-text">
+        <mat-icon>autorenew</mat-icon> Regen Braking:
+        {{ vehicle.regenBraking ? 'ON' : 'OFF' }}
+      </p>
+      <p class="icon-text"><mat-icon>speed</mat-icon> Brake Wear: {{ vehicle.brakeWear }}%</p>
+      <p class="icon-text">
+        <mat-icon>electric_bolt</mat-icon> Consumption: {{ vehicle.energyConsumption }}kWh
+      </p>
+      <p class="icon-text">
+        <mat-icon>social_distance</mat-icon> Mileage: {{ vehicle.mileage }} km
+      </p>
+      <p class="icon-text">
+        <mat-icon>camera</mat-icon> Camera:
+        {{ vehicle.cameraStatus ? 'ACTIVE' : 'INACTIVE' }}
+      </p>
+      <p class="icon-text">
+        <mat-icon>directions_car</mat-icon> Autopilot:
+        {{ vehicle.autopilotMode ? 'ON' : 'OFF' }}
+      </p>
+    </div>
+  </div>
+</mat-card>

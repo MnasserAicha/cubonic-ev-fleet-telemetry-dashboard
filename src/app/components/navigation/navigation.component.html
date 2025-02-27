@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="logo-container">
+    <img
+      src="https://cubonic.de/files/system/images/logo-cubonic.svg"
+      alt="CUBONIC Logo"
+      class="logo"
+    />
+  </div>
+
+  <nav class="navigation" [class.active]="sidebarOpen">
+    <ul class="menu">
+      <li class="theme-toggle">
+        <mat-slide-toggle color="accent" [checked]="isDarkTheme" (change)="toggleTheme($event)">
+        </mat-slide-toggle>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="hamburger" (click)="toggleSidebar()">
+    <span class="line line-1"></span>
+    <span class="line line-2"></span>
+    <span class="line line-3"></span>
+  </div>
+</header>

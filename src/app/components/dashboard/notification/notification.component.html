@@ -1,0 +1,17 @@
+<mat-card class="notification-panel">
+  <div class="header-container">
+    <h2 class="panel-title">🔔 Notifications</h2>
+    <button class="clear-all-btn" (click)="clearAllNotifications()">🗑️ Clear All</button>
+  </div>
+
+  <div class="notification-list">
+    <div class="notification-item" *ngFor="let notification of notifications">
+      <span>{{ notification.message }}</span>
+      <button class="close-btn" (click)="removeNotification(notification.id)">✖️</button>
+    </div>
+
+    <p *ngIf="notifications.length === 0" class="no-notifications">
+      ✅ No alerts, everything is running smoothly!
+    </p>
+  </div>
+</mat-card>

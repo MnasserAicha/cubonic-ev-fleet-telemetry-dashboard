@@ -1,0 +1,282 @@
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: var(--background-color);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: var(--text-color);
+  height: 100%;
+}
+
+.vehicle-column {
+  flex: 40;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.second-column {
+  flex: 35;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+}
+
+.third-column {
+  flex: 25;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+}
+
+.vehicle-grid {
+  flex: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.vehicle-container {
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-color);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #00ccff;
+}
+
+.vehicle-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.vehicle-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vehicle-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.vehicle-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-color);
+  color: black;
+  padding: 10px;
+}
+
+.second-row1 {
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--card-color);
+  flex: 30;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.notification-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.notification-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notification-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.second-row2 {
+  flex: 70;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--card-color);
+}
+
+.item-icon {
+  color: #00ccff;
+  font-size: 20px;
+  height: 40%;
+  width: 100%;
+}
+.third-row1 {
+  flex: 30;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--card-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.third-row2 {
+  flex: 70;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: var(--card-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.drop-container {
+  width: 90%;
+  height: 100%;
+  min-height: 100px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.third-row1 .drop-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.drag-item {
+  background: var(--drag-item-bg);
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.drop-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    flex-direction: column;
+  }
+
+  .column {
+    flex: 100%;
+  }
+
+  .vehicle-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .second-row2 {
+    flex: none;
+    height: 300px;
+  }
+
+  google-map {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .column,
+  .vehicle-column,
+  .second-column,
+  .third-column {
+    flex: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .vehicle-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}

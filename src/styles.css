@@ -1,0 +1,68 @@
+.light-theme {
+  --primary-color: #0061f2;
+  --secondary-color: #ff6b35;
+  --background-color: #f4f5f6;
+  --text-color: #2d3e50;
+}
+
+:root {
+  /* Light Theme */
+  --background-color: #f4f3f6;
+  --card-color: white;
+  --text-color: black;
+  --border-color: rgba(0, 0, 0, 0.2);
+  --primary-color: #00ccff;
+  --drop-container-bg: rgba(255, 255, 255, 0.2);
+  --drag-item-bg: white;
+  --drag-item-text: black;
+  --map-bg: #f4f3f6;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --background-color: #1e2938;
+  --card-color: #2a3b4e;
+  --text-color: white;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --primary-color: #00ccff;
+  --drop-container-bg: rgba(255, 255, 255, 0.1);
+  --drag-item-bg: #33475b;
+  --drag-item-text: white;
+  --map-bg: #2a3b4e;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea,
+span {
+  font-family: inherit;
+  font-weight: 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bold-text {
+  font-weight: 700;
+}

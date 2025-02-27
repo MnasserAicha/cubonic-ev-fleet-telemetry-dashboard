@@ -1,0 +1,81 @@
+<div class="grid-container" *ngIf="vehicles$ | async as vehicles">
+  <div class="column vehicle-column">
+    <div class="row vehicle-grid">
+      <div class="vehicle-container">
+        <h1>🚗 Vehicles</h1>
+        <div class="vehicle-list">
+          <div
+            *ngFor="let vehicle of vehicles | keyvalue: vehicleOrder; trackBy: trackByVehicleId"
+            class="vehicle-card"
+          >
+            <app-vehicle-card
+              [vehicle]="vehicle.value"
+              (cardClicked)="zoomToVehicle($event)"
+            ></app-vehicle-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column second-column">
+    <div class="row second-row1">
+      <div class="notification-container">
+        <app-notification [vehicles$]="vehicles$"></app-notification>
+      </div>
+    </div>
+
+    <div class="row second-row2">
+      <div class="map-container">
+        <h1>📍 Location</h1>
+
+        <google-map [zoom]="mapZoom" [center]="mapCenter" [height]="'90%'" [width]="'100%'">
+          <ng-container *ngFor="let vehicle of vehicles | keyvalue">
+            <map-marker
+              [position]="vehicle.value.location"
+              [label]="'' + vehicle.value.id"
+              [icon]="getVehicleIcon()"
+            >
+            </map-marker>
+          </ng-container>
+        </google-map>
+      </div>
+    </div>
+  </div>
+
+  <div class="column third-column" *ngIf="summary$ | async as summary">
+    <div class="row third-row1">
+      <h1>📌 Available Metrics</h1>
+      <div
+        cdkDropList
+        #availableList="cdkDropList"
+        [cdkDropListData]="availableIcons"
+        class="drop-container"
+        [cdkDropListConnectedTo]="[droppedList]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div *ngFor="let icon of availableIcons; trackBy: trackByFn" cdkDrag class="drag-item">
+          <mat-icon class="item-icon">{{ iconLabels[icon] }} </mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="row third-row2">
+      <h1>📊 Vehicle Summary</h1>
+      <div
+        cdkDropList
+        #droppedList="cdkDropList"
+        [cdkDropListData]="droppedIcons"
+        class="drop-container"
+        [cdkDropListConnectedTo]="[availableList]"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div *ngFor="let icon of droppedIcons; trackBy: trackByFn" cdkDrag class="drag-item">
+          <mat-icon class="item-icon"> {{ iconLabels[icon] }}</mat-icon>
+          <p>{{ icon }}</p>
+          <p class="item-icon">{{ getSummaryValue(summary, icon) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
